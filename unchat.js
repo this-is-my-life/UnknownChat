@@ -1,14 +1,15 @@
 const electron = require('electron')
 const app = electron.app
 const path = require('path')
-let mainWindow
+let postWindow
+let getWindow
 
 app.on('ready', () => {
   openBoardWindow()
 })
 
 app.on('activate', () => {
-  if (!mainWindow) {
+  if (!postWindow) {
     openBoardWindow()
   }
 })
@@ -20,16 +21,28 @@ app.on('window-all-closed', () => {
 })
 
 function openBoardWindow () {
-  let mainWindow = new electron.BrowserWindow({
+  let postWindow = new electron.BrowserWindow({
     height: 600,
     width: 577,
     maxWidth: 577,
     minWidth: 400,
     minHeight: 400
   })
-  mainWindow.setMenu(null)
-  mainWindow.loadFile(path.join(__dirname, './src/main.html'))
-  mainWindow.on('closed', () => {
-    mainWindow = null
+  postWindow.setMenu(null)
+  postWindow.loadFile(path.join(__dirname, './src/post.html'))
+  postWindow.on('closed', () => {
+    postWindow = null
+  })
+  let getWindow = new electron.BrowserWindow({
+    height: 600,
+    width: 577,
+    maxWidth: 577,
+    minWidth: 400,
+    minHeight: 400
+  })
+  getWindow.setMenu(null)
+  getWindow.loadFile(path.join(__dirname, './src/get.html'))
+  getWindow.on('closed', () => {
+    getWindow = null
   })
 }
