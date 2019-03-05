@@ -1,11 +1,6 @@
 const api = require('discord.js')
 const bot = new api.Client
 
-function resize(obj) {
-  obj.style.height = "1px";
-  obj.style.height = (12+obj.scrollHeight)+"px";
-}
-
 document.getElementById('in-tokenBtn').addEventListener('click', () => {
   bot.login(document.getElementById('in-tokenBox').value)
 })

@@ -5,7 +5,8 @@
   margin: 5px;
 }
 .in-MessageBox {
-  margin : 120px 0px;
+  margin : 120px 0px 0px 0px;
+  height: 700px;
   resize: none;
 }
 .btn {
