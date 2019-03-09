@@ -14,8 +14,16 @@
   <body>
       <div class="container-fluid">
           <nav class="navbar navbar-expand-sm navbar-light bg-light row fixed-top">
-            <input  class="form-control col-sm-11 in-tokenBox" id="in-tokenBox" type="password" placeholder="이곳에 봇토큰을 입력하세요">
+            <input  class="form-control col-sm-9 in-tokenBox" id="in-tokenBox" type="password" placeholder="이곳에 봇토큰을 입력하세요">
             <button class="btn btn-success col-sm-1 in-tokenBtn" id="in-tokenBtn">로그인</button>
+            <div class="form-check form-check col-sm-1">
+              <input class="form-check-input" type="checkbox" id="in-readMessageFromDM" value="option1">
+              <label class="form-check-label" for="in-readMessageFromDM">DM에서 메세지 읽어오기</label>
+            </div>
+            <div class="form-check form-check col-sm-1">
+              <input class="form-check-input" type="checkbox" id="in-readMessageFromServer" value="option2">
+              <label class="form-check-label" for="in-readMessageFromServer">서버 채널에서 메세지 읽어오기</label>
+            </div>
           </nav>
           <textarea class="form-control in-MessageBox" id="in-MessageBox" placeholder="[로그인 안됨]" rows="17" readonly></textarea>
         </div>

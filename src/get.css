@@ -5,10 +5,13 @@
   margin: 5px;
 }
 .in-MessageBox {
-  margin : 120px 0px 0px 0px;
-  height: 700px;
-  resize: none;
+  margin-top : 170px;
+  height: 500px;
 }
 .btn {
   margin: 5px;
+}
+div.form-check {
+  margin-left: 5px;
+  margin-top: 3px;
 }

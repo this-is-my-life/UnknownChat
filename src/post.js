@@ -1,5 +1,6 @@
 const api = require('discord.js')
 const bot = new api.Client
+const { ipcRenderer } = require('electron')
 
 function resize(obj) {
   obj.style.height = "1px";
@@ -11,7 +12,13 @@ document.getElementById('in-deleteBtn').addEventListener('click', () => {
 })
 
 document.getElementById('in-tokenBtn').addEventListener('click', () => {
+  ipcRenderer.send('ipc-loginedFromPost', document.getElementById('in-tokenBox').value)
   bot.login(document.getElementById('in-tokenBox').value)
+})
+
+ipcRenderer.on('webContnent-logined', (event, args) => {
+  document.getElementById('in-tokenBox').value = args
+  bot.login(args)
 })
 
 bot.on('ready', () => {
